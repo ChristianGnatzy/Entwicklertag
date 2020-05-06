@@ -1,0 +1,27 @@
+scalar LocalDate
+
+type Query {
+    allEvents: [Event]!
+}
+
+type Event {
+    id: Int!
+    title: String!
+    description: String!
+    eventDate: LocalDate
+    participant(id: Int!) : Participant
+    participants: [Participant]
+}
+
+type Participant {
+    id: ID!
+    firstName: String!
+    surName:  String!
+    fullName: String!
+    skills: [Skill]
+}
+
+type Skill {
+    id: ID!
+    description: String!
+}
